@@ -1,0 +1,30 @@
+/**
+ * ------------------------------------------------------------
+ * Responsive
+ * ------------------------------------------------------------
+ */
+$breakpoints: (
+  'pc': 'screen and (min-width: 813px)',
+  'sp': 'screen and (max-width: 812px)',
+  'iphone5': 'screen and (max-width: 374px)',
+ ) !default;
+@mixin mq($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+ /**
+  * ------------------------------------------------------------
+  * var
+  * ------------------------------------------------------------
+  */
+$color-white: #ffffff;
+$color-lightglay: #dcdcdc;
+$color-glay: #808080;
+$color-black: #1d1d1d;
+$color-blue: #0ab2f4;
+$transition-seconds: .45s;
+$pc-width: 860px;

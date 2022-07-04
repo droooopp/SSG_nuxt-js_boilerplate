@@ -1,0 +1,55 @@
+{
+  "name": "ssg-nuxt-js-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "img_min": "node imgMin.js",
+    "webp": "./webp.sh",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate_pages_list": "rimraf ./pages.txt && cd ./dist/SSG_nuxt-js_boilerplate && ls -d -F $(find `pwd`) > ../../pages.txt && cd ../../ && sed -i '' \"s|$(pwd)/dist|https://www.domain.com|\" pages.txt && sed -i '' \"s|*||\" pages.txt",
+    "generate": "rimraf ./dist/ && ENV=prod nuxt generate && rimraf ./dist/SSG_nuxt-js_boilerplate/.nojekyll && npm run img_min && npm run webp && npm run generate_pages_list"
+  },
+  "browserslist": [
+    "ie 11",
+    "last 1 Edge versions",
+    "last 1 Firefox versions",
+    "last 1 Chrome versions",
+    "last 1 Safari versions",
+    "iOS >= 9",
+    "Android >= 5",
+    "last 1 ChromeAndroid versions"
+  ],
+  "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/runtime": "^7.12.5",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "core-js": "^3.8.0",
+    "gsap": "^3.5.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "imagemin-svgo": "^8.0.0",
+    "intersection-observer": "^0.11.0",
+    "lazysizes": "^5.2.2",
+    "npm": "^6.14.9",
+    "nuxt": "^2.14.6",
+    "nuxt-webfontloader": "^1.1.0",
+    "picturefill": "^3.0.3",
+    "smoothscroll-polyfill": "^0.4.4",
+    "stickyfill": "^1.1.1-strict",
+    "swiper": "^5.3.7",
+    "throttle-debounce": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^7.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.4"
+  }
+}
